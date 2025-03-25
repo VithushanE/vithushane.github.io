@@ -116,29 +116,36 @@
   </div>
 
   <script>
-    document.getElementById('loanForm').addEventListener('submit', async function(event) {
-      event.preventDefault();
+   document.getElementById('loanForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
 
-      const formData = new FormData(this);
-      const formObj = {};
-      formData.forEach((value, key) => {
-        formObj[key] = value;
-      });
+  const formData = new FormData(this);
+  const formObj = {};
+  formData.forEach((value, key) => {
+    formObj[key] = value;
+  });
 
-      try {
-        const response = await fetch('/predict', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formObj)
-        });
-
-        const result = await response.json();
-        alert("Loan Application Result: " + result.prediction);
-      } catch (error) {
-        alert("Something went wrong. Please try again.");
-        console.error(error);
-      }
+  try {
+    const response = await fetch('http://127.0.0.1:5000/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formObj)
     });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      alert("Error: " + errorData.error);
+      console.error("Error:", errorData.error);
+      return;
+    }
+
+    const result = await response.json();
+    alert("Loan Application Result: " + result.prediction);
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error("Fetch error:", error);
+  }
+});
   </script>
 
 </body>
