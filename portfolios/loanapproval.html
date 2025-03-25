@@ -116,36 +116,43 @@
   </div>
 
   <script>
-   document.getElementById('loanForm').addEventListener('submit', async function(event) {
+  document.getElementById('loanForm').addEventListener('submit', async function(event) {
   event.preventDefault();
 
+  // Create an object to store the form data
   const formData = new FormData(this);
   const formObj = {};
+  
+  // Convert FormData to a plain object
   formData.forEach((value, key) => {
     formObj[key] = value;
   });
 
   try {
+    // Send POST request to Flask backend
     const response = await fetch('http://127.0.0.1:5000/predict', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formObj)
+      headers: { 'Content-Type': 'application/json' }, // Ensure the header is application/json
+      body: JSON.stringify(formObj) // Convert object to JSON string
     });
 
+    // Check if the response is successful
     if (!response.ok) {
       const errorData = await response.json();
-      alert("Error: " + errorData.error);
+      alert("Error: " + errorData.error); // Display the error if any
       console.error("Error:", errorData.error);
       return;
     }
 
+    // Get the response from Flask (prediction result)
     const result = await response.json();
-    alert("Loan Application Result: " + result.prediction);
+    alert("Loan Application Result: " + result.prediction); // Display the prediction
   } catch (error) {
     alert("Something went wrong. Please try again.");
-    console.error("Fetch error:", error);
+    console.error("Fetch error:", error); // Log the error to the console
   }
 });
+
   </script>
 
 </body>
