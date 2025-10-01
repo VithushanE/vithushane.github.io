@@ -3,6 +3,9 @@ from flask_cors import CORS
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 import joblib
+import os
+
+
 
 app = Flask(__name__)
 
@@ -91,3 +94,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
