@@ -51,6 +51,7 @@
   </head>
 
   <body id="page-top" class="index" style="">
+
     <!-- Navigation -->
  <nav class="navbar navbar-default navbar-fixed-top">
      <div class="container">
@@ -184,6 +185,61 @@
          </div>
      </div>
  </section>
+
+ <!-- Blog Posts-->
+
+ <section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Blog Posts</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-sql" class="portfolio-link" data-toggle="modal">
+                    <strong style="display: block; text-align: center;">What is SQL?</strong>
+                    <img src="./assets/SQL_image.jpg" class="img-responsive" alt="What is SQL?">
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-2" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/cake.png" class="img-responsive" alt="image-alt">
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-3" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/circus.png" class="img-responsive" alt="image-alt">
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-4" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/game.png" class="img-responsive" alt="image-alt">
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-6" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/submarine.png" class="img-responsive" alt="image-alt">
+                </a>
+            </div>
+        
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-5" class="portfolio-link" data-toggle="modal">
+                    <img src="img/portfolio/safe.png" class="img-responsive" alt="image-alt">
+                </a>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+
   <!-- About Section -->
  <section class="success" id="about">
     <div class="container">
@@ -209,7 +265,6 @@
         </div>
     </div>
 </section>
-
 
  
  <!-- Contact Section -->
@@ -331,7 +386,7 @@
                          <strong><u>BACKGROUND</u></strong>
                              <p>The goal for this project is to predict whether a potential customer is approved for a loan.</p>
                             <p>This dataset contains detailed customer information, including personal income, home ownership status, employment length, loan intent, loan amount, and more. The variable that we want to predict, "loan status", indicates whether a customer has defaulted on a loan, with a value of 1 representing a default and 0 representing no default.</p>
-                            <strong><u>RESULTS</u></strong>
+                            <strong><u>RESULTS!</u></strong>
                          
                                 <p>I built a Random Forest Classifier model that achieved 95% accuracy.  </p>
                                 <p>If you want to know more about the technical details, click on the github Repository below. Alternatively, if you want to test out whether you would get approved, select on the second link!</p>
@@ -590,6 +645,50 @@
          </div>
      </div>
  </div>
+
+<!-- What is SQL? Modal -->
+<div class="portfolio-modal modal fade" id="portfolioModal-sql" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>What is SQL?</h2>
+                        <hr class="star-primary">
+                        <img src="./assets/SQL_image.jpg" class="img-responsive img-centered" alt="SQL illustration">
+                        
+                        <p><strong>SQL</strong> (Structured Query Language) is a standardized language used to interact with relational databases. It allows you to create, read, update, and delete data efficiently using simple queries.</p>
+                        <p>Some common SQL commands include:</p>
+                        <ul>
+                            <li><code>SELECT</code> – retrieve data from tables</li>
+                            <li><code>INSERT</code> – add new records</li>
+                            <li><code>UPDATE</code> – modify existing data</li>
+                            <li><code>DELETE</code> – remove data</li>
+                        </ul>
+                        <p>SQL is used in almost every data-related job, from data analysis to backend development and machine learning pipelines.</p>
+
+                        <ul class="list-inline item-details">
+                            <li>Category:
+                                <strong style="color:darkcyan">Database / Data Science</strong>
+                            </li>
+                            <li>Learn More:
+                                <strong style="color:darkcyan"><a href="https://github.com/VithushanE" target="_blank">GitHub</a></strong>
+                            </li>
+                        </ul>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
   <!-- jQuery Version 1.11.0 -->
  <script src="https://jeromelachaud.com/freelancer-theme/js/jquery-1.11.0.js"></script>
